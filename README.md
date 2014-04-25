@@ -1,4 +1,4 @@
-Provides a test authenticator for [CASino](https://github.com/rbCAS/CASino).
+# casino-test_authenticator [![Build Status](https://travis-ci.org/beezly/casino-test_authenticator.png?branch=master)](https://travis-ci.org/beezly/casino-test_authenticator) [![Coverage Status](https://coveralls.io/repos/beezly/casino-test_authenticator/badge.png)](https://coveralls.io/r/beezly/casino-test_authenticator)Provides a test authenticator for [CASino](https://github.com/rbCAS/CASino).
 
 The test authenticator will validate a user if the username and password match.
 
