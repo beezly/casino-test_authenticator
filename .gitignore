@@ -1,0 +1,9 @@
+# rcov generated
+coverage
+coverage.data
+
+# bundler
+.bundle
+
+Gemfile.lock
+/pkg
