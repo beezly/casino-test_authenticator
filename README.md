@@ -1,5 +1,7 @@
 # casino-test_authenticator [![Build Status](https://travis-ci.org/beezly/casino-test_authenticator.png?branch=master)](https://travis-ci.org/beezly/casino-test_authenticator) [![Coverage Status](https://coveralls.io/repos/beezly/casino-test_authenticator/badge.png)](https://coveralls.io/r/beezly/casino-test_authenticator)Provides a test authenticator for [CASino](https://github.com/rbCAS/CASino).
 
+I've written a [blog article](http://beez.ly/2014/05/15/building-a-development-cas-environment-with-casinoapp-and-casino-test_authenticator/) on how to use this with CASinoApp.
+
 The test authenticator will validate a user if the username and password match.
 
 **The test authenticator should only be used in environments where you do not care about security**
