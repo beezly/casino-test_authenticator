@@ -1,4 +1,5 @@
 require 'casino/authenticator'
+require 'faker'
 
 class CASino::TestAuthenticator
   # @param [Hash] options
@@ -26,6 +27,9 @@ class CASino::TestAuthenticator
   end
 
   def extra_attributes
-    nil
+    attr = {}
+    attr[:mail] = Faker::Internet.email if @options[:mail]
+    puts attr
+    attr.length == 0 ? nil : attr
   end
 end
