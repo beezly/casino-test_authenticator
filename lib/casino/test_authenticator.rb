@@ -29,7 +29,6 @@ class CASino::TestAuthenticator
   def extra_attributes
     attr = {}
     attr[:mail] = Faker::Internet.email if @options[:mail]
-    puts attr
     attr.length == 0 ? nil : attr
   end
 end
