@@ -22,6 +22,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'simplecov', '~> 0.7'
   s.add_development_dependency 'coveralls', '~> 0'
 
-  s.add_runtime_dependency 'casino', '~> 2.0'
+  s.add_runtime_dependency 'casino', '> 2.0'
   s.add_runtime_dependency 'faker', '~> 0'
 end
