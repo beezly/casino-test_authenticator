@@ -5,6 +5,8 @@ describe CASino::TestAuthenticator do
   let(:options) { { } }
   let(:subject) { described_class.new(options) }
   let(:connection) { Object.new }
+  let(:username) { 'test' }
+  let(:password) { 'test' }
 
   describe '#validate when options are nil' do
     let(:options) { nil }
@@ -16,7 +18,6 @@ describe CASino::TestAuthenticator do
 
   describe '#validate' do
     context 'when validation succeeds' do
-      let(:password) { 'test' }
       it 'returns the user data' do
         subject.validate(username, password).should == {
           username: username,
@@ -35,7 +36,6 @@ describe CASino::TestAuthenticator do
 
     context 'when a mail attribute is required' do
       let (:options) { { mail: true } }
-      let (:password) { 'test' }
       it 'returns a mail attribute' do 
         res = subject.validate(username, password)
         res.should have_key(:extra_attributes)
