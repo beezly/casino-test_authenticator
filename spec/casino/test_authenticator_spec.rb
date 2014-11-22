@@ -6,10 +6,15 @@ describe CASino::TestAuthenticator do
   let(:subject) { described_class.new(options) }
   let(:connection) { Object.new }
 
+  describe '#validate when options are nil' do
+    let(:options) { nil }
+
+    it 'does not raise an error' do
+      expect{subject.validate(username, password)}.to_not raise_error
+    end
+  end
 
   describe '#validate' do
-    let(:username) { 'test' }
-
     context 'when validation succeeds' do
       let(:password) { 'test' }
       it 'returns the user data' do
