@@ -10,7 +10,7 @@ class CASino::TestAuthenticator
   def validate(username, password)
     @username = username
     @password = password
-    if username != password
+    if username.empty? || username != password
       false
     else
       generate_user

@@ -14,11 +14,10 @@ describe CASino::TestAuthenticator do
       let(:password) { 'test' }
       it 'returns the user data' do
         subject.validate(username, password).should == {
-          username: username,
-          extra_attributes: nil
+            username: username,
+            extra_attributes: nil
         }
       end
-      
     end
 
     context 'when validation fails' do
@@ -28,10 +27,26 @@ describe CASino::TestAuthenticator do
       end
     end
 
+    context 'when username is empty string' do
+      let(:username) { '' }
+      let(:password) { '' }
+      it 'returns false' do
+        subject.validate(username, password).should == false
+      end
+    end
+
+    context 'when username is blank string' do
+      let(:username) { ' ' }
+      let(:password) { '' }
+      it 'returns false' do
+        subject.validate(username, password).should == false
+      end
+    end
+
     context 'when a mail attribute is required' do
       let (:options) { { mail: true } }
       let (:password) { 'test' }
-      it 'returns a mail attribute' do 
+      it 'returns a mail attribute' do
         res = subject.validate(username, password)
         res.should have_key(:extra_attributes)
         res[:extra_attributes][:mail].should be_a_kind_of(String)
