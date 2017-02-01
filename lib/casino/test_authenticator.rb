@@ -4,7 +4,7 @@ require 'faker'
 class CASino::TestAuthenticator
   # @param [Hash] options
   def initialize(options)
-    @options = options
+    @options = options || {}
   end
 
   def validate(username, password)
@@ -30,6 +30,6 @@ class CASino::TestAuthenticator
     attr = {}
     attr = @options[:extra_attributes].dup if @options[:extra_attributes].is_a?(Hash)
     attr[:mail] = Faker::Internet.email if @options[:mail]
-    attr.length == 0 ? nil : attr
+    attr.length.zero? ? nil : attr
   end
 end
