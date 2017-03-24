@@ -53,5 +53,17 @@ describe CASino::TestAuthenticator do
       end
     end
 
+    context 'when extra_attributes are given' do
+      let (:options) { { mail: true, extra_attributes: { first_name: 'Clark', last_name: 'Kent' } } }
+      let (:password) { 'test' }
+      it 'returns the extra_attributes' do
+        res = subject.validate(username, password)
+        res.should have_key(:extra_attributes)
+        res[:extra_attributes][:first_name].should eql('Clark')
+        res[:extra_attributes][:last_name].should eql('Kent')
+        options[:extra_attributes][:mail].should eql(nil)
+      end
+    end
+
   end
 end

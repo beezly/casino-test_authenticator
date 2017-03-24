@@ -11,9 +11,12 @@ To use the test authenticator, configure it in your cas.yml:
     authenticators:
       test_authenticator:
         authenticator: "Test"
-        options:
+        options:  # All the options are optional
+          mail: true  # If true will return a mail attribute containing a fake e-mail address for the user
+          extra_attributes: # Can contain whatever values you want
+            foo: 'value'
+            bar: 'value'
 
-The only option is "mail" which will return a mail attribute containg a fake e-mail address for the user.
 
 ## Contributing to casino-test_authenticator
 
