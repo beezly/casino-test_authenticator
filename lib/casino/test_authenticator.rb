@@ -4,7 +4,7 @@ require 'faker'
 class CASino::TestAuthenticator
   # @param [Hash] options
   def initialize(options)
-    @options = options
+    @options = options || {}
   end
 
   def validate(username, password)
